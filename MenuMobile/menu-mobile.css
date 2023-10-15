@@ -1,0 +1,120 @@
+/**************************************************************
+# 
+#   GLOBAL SETTING
+#   Write by: Alexandre Lambertini
+#   Date: 10/08/2023
+#  
+/**************************************************************/
+
+
+:root {
+    --sidebar-color: rgb(44, 44, 44);
+    --hamburguer-color: #fff;
+    --sidebar-font-color:#fff;
+    --border-color: #1a436693;
+    --color-font:#fff;
+    --color-title:#;
+}
+
+@media (width >= 920px) {
+    hamburguer-menu {
+        display: none;
+    }
+    
+    #sidebar h5 {
+        display: none;
+    } 
+}
+
+
+@media (width <= 920px) {
+
+
+    hamburguer-menu {
+        display: block;
+    }
+
+
+    #sidebar {
+        color: var(--sidebar-font-color);
+        flex-direction: column;
+        top: 0;
+        left: -1500px;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--sidebar-color);
+        padding: 0% 10%;
+        padding-top: 100px;
+        box-sizing: border-box;
+        z-index: 1;
+        overflow: hidden;
+        transition: left .4s ease-in-out;
+    }
+
+    #menu {
+        position: relative;
+    }
+
+    #menu div.active {
+        width: 100%;
+        display: block;
+        left: 0;
+    }
+
+    #menu h5 {
+        display: block;
+        color:var(--color-title);
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        margin-top: 60px;
+    }
+
+    #menu h5:first-child {
+        margin-top: 0;
+    }
+
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        position: relative;
+        list-style: none;
+    }
+
+    #menu ul li {
+        position: relative;
+    }
+
+    #menu ul li::before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: -20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    #menu ul li a {
+        font-size: 1.3rem;
+        border: none;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        color:var(--color-font)
+    }
+
+    #menu ul li a:hover {
+        background: none;
+        border: 0;
+    }
+
+    #hamburguer {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+    } 
+}
+
