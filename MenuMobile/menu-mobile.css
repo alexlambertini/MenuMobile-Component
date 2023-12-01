@@ -54,6 +54,7 @@
 
     #menu {
         position: relative;
+        height: 25px;
     }
 
     #menu div.active {

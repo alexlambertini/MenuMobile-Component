@@ -21,11 +21,13 @@ class HamburguerMenu extends HTMLElement {
     // Estilos para o componente
     const style = document.createElement('style');
     style.textContent = `
+
       #hamburger-button {
         background-color: transparent;
         border: 0;
         overflow: hidden;
         cursor: pointer;
+        padding: 0;
       }
 
       #hamburger-button span {
@@ -37,9 +39,14 @@ class HamburguerMenu extends HTMLElement {
         margin-top: 6px;
       }
 
+      #hamburger-button span:nth-child(1) {
+        margin:0;
+      }
+
       #hamburger-button span:nth-child(2) {
         width: 20px;
       }
+
     `;
 
     shadow.appendChild(style);
@@ -68,9 +75,9 @@ class HamburguerMenu extends HTMLElement {
       spans[1].style.transform = 'translate(0px)';
       spans[2].style.transform = 'rotate(0) translate(0)';
     } else {
-      spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+      spans[0].style.transform = 'rotate(45deg) translate(6px, 8px)';
       spans[1].style.transform = 'translate(-50px)';
-      spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+      spans[2].style.transform = 'rotate(-45deg) translate(6px, -7px)';
     }
 
     // Alterna a classe "active" no componente
