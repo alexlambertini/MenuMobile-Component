@@ -6,17 +6,30 @@
 #  
 /**************************************************************/
 
-
 :root {
-    --sidebar-color: rgb(44, 44, 44);
-    --hamburguer-color: #fff;
+
+    /* HAMBURGUER SETTING */
+    --hamburguer-color: #4C5A49;
+    
+    /* SIDE-BAR SETTINGS */
+    --sidebar-color: #F3f3f3;
     --sidebar-font-color:#fff;
-    --border-color: #1a436693;
-    --color-font:#fff;
-    --color-title:#;
+    
+    /* MENU SETTINGS  */
+    --menu-size:1.4rem;
+    --menu-font:#4C5A49;
+    --menu-separator: #e2e2e293;
+    --menu-case: normal;
+    --menu-weight: normal;
+    
+    /* H5 SETTINGS */
+    --title-color:#333;
+    --title-size:1.2rem;
+    --title-case: uppercase;
+    --title-weight: normal;
 }
 
-@media (width >= 920px) {
+@media (width >= 992px) {
     hamburguer-menu {
         display: none;
     }
@@ -27,7 +40,7 @@
 }
 
 
-@media (width <= 920px) {
+@media (width <= 992px) {
 
 
     hamburguer-menu {
@@ -41,7 +54,7 @@
         top: 0;
         left: -1500px;
         position: fixed;
-        width: 100%;
+        width: 50%;
         height: 100vh;
         background: var(--sidebar-color);
         padding: 0% 10%;
@@ -51,6 +64,7 @@
         overflow: hidden;
         transition: left .4s ease-in-out;
     }
+
 
     #menu {
         position: relative;
@@ -65,10 +79,12 @@
 
     #menu h5 {
         display: block;
-        color:var(--color-title);
-        font-size: 1.2rem;
+        color:var(--title-color);
+        font-size: var(--title-size);
         margin-bottom: 30px;
         margin-top: 60px;
+        text-transform: var(--title-case);
+        font-weight: var(--title-weight);
     }
 
     #menu h5:first-child {
@@ -82,10 +98,13 @@
         width: 100%;
         position: relative;
         list-style: none;
+        align-items: start;
     }
 
     #menu ul li {
         position: relative;
+        width: 100%;
+        border: 0;
     }
 
     #menu ul li::before {
@@ -93,16 +112,18 @@
         width: 100%;
         position: absolute;
         bottom: -20px;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--menu-separator);
     }
 
     #menu ul li a {
-        font-size: 1.3rem;
+        font-size: var(--menu-size);
         border: none;
         width: 100%;
         display: block;
         box-sizing: border-box;
-        color:var(--color-font)
+        color:var(--menu-font);
+        text-transform: var(--menu-case);
+        font-weight: var(--menu-weight);
     }
 
     #menu ul li a:hover {
@@ -113,9 +134,32 @@
     #hamburguer {
         display: block;
         position: absolute;
-        top: 0;
         right: 0;
         z-index: 100;
     } 
 }
 
+
+@media (width <= 922px) {
+
+    #sidebar {
+        width: 100%;
+        padding-top: 60px;
+
+        h5 {
+            margin-bottom: 40px
+        }
+    }
+
+    .menu-item {
+        
+        width: 100%;
+
+        a {
+            font-size: 1rem;
+        }
+    }
+
+
+
+}
