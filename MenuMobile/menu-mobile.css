@@ -7,26 +7,24 @@
 /**************************************************************/
 
 :root {
-
     /* HAMBURGUER SETTING */
     --hamburguer-color: #4C5A49;
     
     /* SIDE-BAR SETTINGS */
-    --sidebar-color: #F3f3f3;
-    --sidebar-font-color:#fff;
-    
-    /* MENU SETTINGS  */
-    --menu-size:1.4rem;
-    --menu-font:#4C5A49;
-    --menu-separator: #e2e2e293;
-    --menu-case: normal;
-    --menu-weight: normal;
+    --sidebar-color: #fff;
     
     /* H5 SETTINGS */
-    --title-color:#333;
+    --title-color:#c2c2c2;
     --title-size:1.2rem;
     --title-case: uppercase;
     --title-weight: normal;
+
+    /* MENU SETTINGS  */
+    --menu-size:1.4rem;
+    --menu-font: #4C5A49;
+    --menu-separator: #e2e2e293;
+    --menu-case: normal;
+    --menu-weight: normal;
 }
 
 @media (width >= 992px) {
@@ -42,14 +40,11 @@
 
 @media (width <= 992px) {
 
-
     hamburguer-menu {
         display: block;
     }
 
-
     #sidebar {
-        color: var(--sidebar-font-color);
         flex-direction: column;
         top: 0;
         left: -1500px;
@@ -63,8 +58,8 @@
         z-index: 1;
         overflow: hidden;
         transition: left .4s ease-in-out;
+        box-shadow: 0 0 10px 5px #00000017;
     }
-
 
     #menu {
         position: relative;
@@ -159,7 +154,5 @@
             font-size: 1rem;
         }
     }
-
-
 
 }
